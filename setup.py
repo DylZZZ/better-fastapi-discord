@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 readme = open("README.md", "r").read()
 
 setup(
-    name="fastapi_discord",
+    name="better_fastapi_discord",
     packages=find_packages(),
     version="0.2.4",
     description="Discord OAuth FastAPI extension for APIs",
