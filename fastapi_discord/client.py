@@ -192,11 +192,16 @@ class DiscordOAuthClient:
         resp = await self.get_token_response(payload)
         return _tokens(resp)
 
-    async def user(self, request: Request):
+    async def user(self, request: Request=None, token: str=None):
+        if request == None and token == None:
+            return False
+            
         if "identify" not in self.scopes:
             raise ScopeMissing("identify")
+            
         route = "/users/@me"
-        token = self.get_token(request)
+        if token == None:
+            token = self.get_token(request)
         return User(**(await self.request(route, token)))
 
     async def guilds(self, request: Request) -> List[GuildPreview]:
