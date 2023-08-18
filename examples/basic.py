@@ -2,9 +2,9 @@ from typing import List
 
 from fastapi import Depends, FastAPI
 from fastapi.responses import JSONResponse
-from fastapi_discord import DiscordOAuthClient, RateLimited, Unauthorized, User
-from fastapi_discord.exceptions import ClientSessionNotInitialized
-from fastapi_discord.models import GuildPreview
+from better_fastapi_discord import DiscordOAuthClient, RateLimited, Unauthorized, User
+from better_fastapi_discord.exceptions import ClientSessionNotInitialized
+from better_fastapi_discord.models import GuildPreview
 
 app = FastAPI()
 
